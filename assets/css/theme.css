@@ -32,11 +32,20 @@ body {
 }
 
 #outputpre {
+  background-color: #181818;
+  color: white;
   min-height: 350px;
-  font-size: 85%;
+  font-size: 100%;
 }
 
 #headerpre {
   min-height: 100px;
   font-size: 85%;  
 }
+
+
+.string { color: #b9ca4a; }
+.number { color: #daa637; }
+.boolean { color: #7aa6da; }
+.null { color: white; }
+.key { color: #7aa6da; }

@@ -49,7 +49,10 @@ function postWithAjax(myajax) {
 		} else {
 			$("#statuspre").addClass("alert-warning");
 		}
-		$("#outputpre").text(jqXHR.responseText);
+		
+		var text = syntaxHighlight(jqXHR.responseText);
+		
+		$("#outputpre").html(text);
 		$("#headerpre").text(jqXHR.getAllResponseHeaders());
 	}
 
@@ -128,5 +131,32 @@ function createMultipart(){
 }
 
 function httpZeroError() {
-	$("#errordiv").append('<div class="alert alert-danger fade in" role="alert"> <button type="button" class="close" data-dismiss="alert"><span aria-hidden="true">×</span><span class="sr-only">Close</span></button> <strong>Oh no!</strong> Javascript returned an HTTP 0 error. One common reason this might happen is that you requested a cross-domain resource from a server that did not include the appropriate CORS headers in the response. Better open up your debugger...</div>');
+	$("#errordiv").append('<div class="alert alert-danger fade in" role="alert"> <button type="button" class="close" data-dismiss="alert"><span aria-hidden="true">ï¿½</span><span class="sr-only">Close</span></button> <strong>Oh no!</strong> Javascript returned an HTTP 0 error. One common reason this might happen is that you requested a cross-domain resource from a server that did not include the appropriate CORS headers in the response. Better open up your debugger...</div>');
+}
+
+
+function syntaxHighlight(text) {
+	
+	try{
+        var json = jQuery.parseJSON(text);
+       	json = JSON.stringify(json, undefined, 4);
+			  json = json.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;');
+			  return json.replace(/("(\\u[a-zA-Z0-9]{4}|\\[^u]|[^\\"])*"(\s*:)?|\b(true|false|null)\b|-?\d+(?:\.\d*)?(?:[eE][+\-]?\d+)?)/g, function (match) {
+			      var cls = 'number';
+			      if (/^"/.test(match)) {
+			          if (/:$/.test(match)) {
+			              cls = 'key';
+			          } else {
+			              cls = 'string';
+			          }
+			      } else if (/true|false/.test(match)) {
+			          cls = 'boolean';
+			      } else if (/null/.test(match)) {
+			          cls = 'null';
+			      }
+			      return '<span class="' + cls + '">' + match + '</span>';
+		  });
+    }catch(e){
+        return text;
+    }
 }
