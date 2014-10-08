@@ -1,146 +1,133 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="utf-8">
-<title>REST test test...</title>
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="description" content="">
-<meta name="author" content="">
-
-<!-- Le styles -->
-<link href="bootstrap/css/bootstrap.min.css" rel="stylesheet">
-<link href="bootstrap/css/bootstrap-responsive.min.css" rel="stylesheet">
-<link href="debug.css" rel="stylesheet">
-
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="icon" href="favicon.ico">
+	<title>REST test test...</title>
+    <link href="vendors/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href="vendors/bootstrap/css/bootstrap-theme.min.css" rel="stylesheet">
+    <link href="assets/css/theme.css" rel="stylesheet">
 </head>
 
 <body>
-
+	<!-- hidden stuff -->
 	<div class="hidden">
-
-		<div class="httpfile">
-			<a class="close">&times;</a>
-			<div class="row show-grid">
-				<div class="span2">
-					<div class="control-group">
-						<div class="controls">
-							<input type="text" class="input-medium fakeinputname" value="">
-						</div>
+		<div class="httpfile">			
+			<div class="row">
+				<div class="col-xs-4">
+					<div class="form-group">						
+						<input type="text" class="form-control fakeinputname" value="">						
 					</div>
 				</div>
-
-				<div class="span3">
-					<div class="control-group">
-						<div class="controls">
-							<input class="input-file realinputvalue" multiple type="file">
-						</div>
+				<div class="col-xs-7">
+					<div class="form-group">
+						<input class="form-control realinputvalue" multiple type="file">
 					</div>
+				</div>
+				<div class="col-xs-1">
+					<a class="close">&times;</a>
 				</div>
 			</div>
 		</div>
-
 		<div class="httpparameter">
-			<a class="close">&times;</a>
 			<div class="row show-grid">
-				<div class="span2">
-					<div class="control-group">
-						<div class="controls">
-							<input type="text" class="input-medium fakeinputname" value="">
-						</div>
+				<div class="col-xs-4">
+					<div class="form-group">
+							<input type="text" class="form-control fakeinputname" value="">
 					</div>
 				</div>
-
-				<div class="span3">
-					<div class="control-group">
-						<div class="controls">
+				<div class="col-xs-7">
+					<div class="form-group">
 							<!-- <textarea class="input-xlarge realinputvalue" rows="2"></textarea>-->
-							<input type="text" class="input-xlarge realinputvalue" value="">
-						</div>
+							<input type="text" class="form-control realinputvalue" value="">
 					</div>
+				</div>
+				<div class="col-xs-1">
+					<a class="close">&times;</a>
 				</div>
 			</div>
 		</div>
 	</div>
-
-	<div class="navbar navbar-fixed-top navbar-inverse">
-		<div class="navbar-inner">
+	<!-- end hidden stuff -->	
+	
+	<!-- navbar -->	
+	<div class="container">
+		<div class="navbar navbar-inverse">
 			<div class="container">
-				<a class="btn btn-navbar" data-toggle="collapse"
-					data-target=".nav-collapse"> <span class="icon-bar"></span> <span
-					class="icon-bar"></span> <span class="icon-bar"></span>
-				</a> <a class="brand" href="#">REST test test...</a>
-				<div class="nav-collapse">
-					<ul class="nav">
+			  <div class="navbar-header">
+				<button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+				  <span class="sr-only">Toggle navigation</span>
+				  <span class="icon-bar"></span>
+				  <span class="icon-bar"></span>
+				  <span class="icon-bar"></span>
+				</button>
+				<a class="navbar-brand" href="#">REST test test...</a>
+			  </div>
+			  <div class="navbar-collapse collapse">
+				<ul class="nav navbar-nav">
+				  <li class="dropdown">
+					<a href="#" class="dropdown-toggle" data-toggle="dropdown">About <b class="caret"></b></a>
+					<ul class="dropdown-menu">
 						<li><a target="_blank" href="https://github.com/jeroenooms/resttesttest">Source Code</a></li>
 						<li><a target="_blank" href="https://github.com/jeroenooms/resttesttest/issues/new">Submit Bug</a></li>
+						<li class="divider"></li>
 						<li><a target="_blank" href="http://jeroenooms.github.io">Author</a></li>
 					</ul>
-				</div>
-				<!--/.nav-collapse -->
+				  </li>
+				</ul>
+			  </div>
 			</div>
-		</div>
-	</div>
-
+		  </div>
+	  </div>
+	
+	<!-- main -->	
 	<div class="container">
-
-		<div class="row show-grid">
-			<div id="leftcolumn" class="span6">
+		<div class="row">
+		  <div class="col-md-6">
+		  <!-- left col -->
 				<form id="paramform" class="well" target="outputframe">
 					<fieldset>
 						<legend>HTTP request options</legend>
-
-						<br />
-
-
-						<div class="row show-grid">
-							<div class="span1">
-								<div class="control-group">
-									<label class="control-label" for="httpmethod">Method</label>
-									<div class="controls">
-										<select class="input-small" id="httpmethod">
-											<option>GET</option>
-											<option>POST</option>
-  											<option>OPTIONS</option>
-											<option>PUT</option>
-											<option>DELETE</option>
-											<option>HEAD</option>
-										</select>
-									</div>
+						<div class="row">
+							<div class="col-xs-3">
+								<div class="form-group">
+									<label or="httpmethod">Method</label>
+									<select class="form-control" id="httpmethod">
+										<option>GET</option>
+										<option>POST</option>
+										<option>OPTIONS</option>
+										<option>PUT</option>
+										<option>DELETE</option>
+										<option>HEAD</option>
+									</select>
 								</div>
 							</div>
-
-							<div class="span4">
-								<div class="control-group">
-									<label class="control-label" for="urlvalue">Endpoint</label>
-									<div class="controls">
-										<input type="text" class="input-xlarge" id="urlvalue"
-											value="https://public.opencpu.org/ocpu/library/">
-									</div>
+							<div class="col-xs-9">
+								<div class="form-group">
+									<label for="urlvalue">Endpoint</label>
+									<input type="text" class="form-control" id="urlvalue" value="https://public.opencpu.org/ocpu/library/">
 								</div>
 							</div>
 						</div>
-
-						<p class="help-block">Method and Endpoint are required. Click
-							below to add additional parameters.</p>
-
+						<p class="help-block">Method and Endpoint are required. Click below to add additional parameters.</p>
 						<div id="allparameters">
-
-							<div class="row show-grid">
-								<div class="span2">
-									<div class="control-group">
-										<label class="control-label">Parameter Name</label>
+							<div class="row">
+								<div class="col-xs-4">
+									<div class="form-group">
+										<label>Parameter Name</label>
 									</div>
 								</div>
-
-								<div class="span3">
-									<div class="control-group">
-										<label class="control-label">Parameter Value</label>
+								<div class="col-xs-8">
+									<div class="form-group">
+										<label>Parameter Value</label>
 									</div>
 								</div>
 							</div>
-
 						</div>
-
 						<div align="left">
 							<button id="addprambutton" class="btn btn-primary">
 								<i class="icon-plus icon-white"></i> Add parameter
@@ -150,44 +137,40 @@
 							</button>
 						</div>
 						<br />
-
 						<div align="right">
-							<button id="submitajax" class="btn btn-success btn-large">
-								<i class="icon-download-alt icon-white"></i> Ajax request
+							<button id="submitajax" class="btn btn-success btn-lg">
+								<i class="glyphicon glyphicon-download-alt"></i> Ajax request
 							</button>
-							<img src="spinner.gif" id="ajaxspinner" />
+							<img src="assets/img/spinner.gif" id="ajaxspinner" />
 						</div>
 					</fieldset>
 				</form>
-
 				<div id="errordiv"></div>
-        
-  			<div class="alert alert-info">
-					<a class="close" data-dismiss="alert">&times;</a> <strong>Welcome!</strong>
-          Use this simple page to poke around at the API.
-          Specify HTTP method, URL and parameters, and click on <b>Ajax Request</b>.
-          Note that this page requires a browser with HTML5 support.
-				</div>
-
+				<div class="alert alert-info fade in" role="alert">
+						<button type="button" class="close" data-dismiss="alert"><span aria-hidden="true">×</span><span class="sr-only">Close</span></button>
+						<!--a class="close" data-dismiss="alert">&times;</a--> 
+						<strong>Welcome!</strong>
+						Use this simple page to poke around at the API.
+						Specify HTTP method, URL and parameters, and click on <b>Ajax Request</b>.
+						Note that this page requires a browser with HTML5 support.
+				</div>				
+		  <!-- end left col -->
+		  </div>
+		  <div class="col-md-6">
+		  <!-- right col -->		  
+			<div id="ajaxoutput">
+				<pre id="statuspre">0</pre>
+				<pre class="pre-scrollable prettyprint linenums" id="outputpre"></pre>
+				<pre class="pre-scrollable prettyprint linenums" id="headerpre"></pre>
 			</div>
-
-			<div class="span6">
-				<div id="ajaxoutput">
-					<pre id="statuspre">0</pre>
-					<pre class="pre-scrollable prettyprint linenums" id="outputpre"></pre>
-					<pre class="pre-scrollable prettyprint linenums" id="headerpre"></pre>
-				</div>
-			</div>
+		  <!-- end right col -->
+		  </div>
 		</div>
-
-		<br>
-
-
 	</div>
 
-	<script src="jquery-1.10.2.min.js"></script>
-	<script src="bootstrap/js/bootstrap.min.js"></script>
-	<script src="debug.js"></script>
-  
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+	<script src="vendors/bootstrap/js/bootstrap.min.js"></script>
+	<script src="assets/js/ie10-viewport-bug-workaround.js"></script>
+	<script src="assets/js/debug.js"></script>  
 </body>
 </html>
