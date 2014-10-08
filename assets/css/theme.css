@@ -1,0 +1,42 @@
+body {
+  padding-top: 10px;
+  padding-bottom: 30px;
+}
+
+.theme-dropdown .dropdown-menu {
+  position: static;
+  display: block;
+  margin-bottom: 20px;
+}
+
+.theme-showcase > p > .btn {
+  margin: 5px 0;
+}
+
+.theme-showcase .navbar .container {
+  width: auto;
+}
+
+.navbar-brand
+{
+	font-size: 28px;
+	color: #ffffff;
+}
+
+#allparameters {
+  display: none;
+}
+
+#ajaxspinner {
+  display: none;
+}
+
+#outputpre {
+  min-height: 350px;
+  font-size: 85%;
+}
+
+#headerpre {
+  min-height: 100px;
+  font-size: 85%;  
+}
